@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 Platforms to Earn in USD — shiv4ngi.decodes</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF8F4;
+    --cream-dark: #F2EFE9;
+    --cream-border: #E5E0D8;
+    --ink: #1A1714;
+    --ink-mid: #4A4540;
+    --ink-light: #8A857E;
+    --accent-green: #2D6A4F;
+    --accent-green-bg: #EAF4EE;
+    --accent-green-border: #B7DEC8;
+    --accent-amber: #92400E;
+    --accent-amber-bg: #FEF3E2;
+    --accent-amber-border: #FCD29A;
+    --accent-blue: #1E3A8A;
+    --accent-blue-bg: #EFF6FF;
+    --accent-blue-border: #BFDBFE;
+    --accent-purple: #5B21B6;
+    --accent-purple-bg: #F5F3FF;
+    --accent-purple-border: #DDD6FE;
+    --accent-coral: #9D3025;
+    --accent-coral-bg: #FEF2F2;
+    --accent-coral-border: #FECACA;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ---- NAV ---- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 248, 244, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--cream-border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .nav-brand {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-light);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+
+  /* ---- HERO ---- */
+  .hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-green);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--accent-green);
+  }
+
+  .hero-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--ink-mid);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--ink-mid);
+    max-width: 560px;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    border: 1px solid var(--cream-border);
+    color: var(--ink-mid);
+    background: white;
+  }
+
+  .hero-deco {
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+    font-family: 'Fraunces', serif;
+    font-size: 120px;
+    font-weight: 700;
+    color: var(--cream-dark);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  /* ---- DIVIDER ---- */
+  .section-divider {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    border-top: 1px solid var(--cream-border);
+    margin-bottom: 0;
+  }
+
+  /* ---- PLATFORM CARDS ---- */
+  .platforms {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .platform-card {
+    background: white;
+    border: 1px solid var(--cream-border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .platform-card:hover {
+    box-shadow: 0 8px 32px rgba(26, 23, 20, 0.08);
+    transform: translateY(-2px);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .platform-card:nth-child(1) { animation-delay: 0.05s; }
+  .platform-card:nth-child(2) { animation-delay: 0.1s; }
+  .platform-card:nth-child(3) { animation-delay: 0.15s; }
+  .platform-card:nth-child(4) { animation-delay: 0.2s; }
+  .platform-card:nth-child(5) { animation-delay: 0.25s; }
+
+  /* Card header */
+  .card-top {
+    padding: 1.5rem 1.75rem 1.25rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .platform-num {
+    font-family: 'Fraunces', serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--cream-dark);
+    margin-top: 2px;
+  }
+
+  .card-title-group { flex: 1; }
+
+  .platform-name {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  .platform-tagline {
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.5;
+  }
+
+  .platform-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    padding: 7px 14px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+    white-space: nowrap;
+    margin-top: 4px;
+  }
+
+  .platform-link:hover { filter: brightness(0.92); }
+
+  .link-green { background: var(--accent-green-bg); color: var(--accent-green); border: 1px solid var(--accent-green-border); }
+  .link-purple { background: var(--accent-purple-bg); color: var(--accent-purple); border: 1px solid var(--accent-purple-border); }
+  .link-blue { background: var(--accent-blue-bg); color: var(--accent-blue); border: 1px solid var(--accent-blue-border); }
+  .link-amber { background: var(--accent-amber-bg); color: var(--accent-amber); border: 1px solid var(--accent-amber-border); }
+  .link-coral { background: var(--accent-coral-bg); color: var(--accent-coral); border: 1px solid var(--accent-coral-border); }
+
+  /* Badge strip */
+  .badge-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0.75rem 1.75rem;
+    border-top: 1px solid var(--cream-border);
+    border-bottom: 1px solid var(--cream-border);
+    background: var(--cream);
+  }
+
+  .badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+
+  .badge-green { background: var(--accent-green-bg); color: var(--accent-green); }
+  .badge-blue { background: var(--accent-blue-bg); color: var(--accent-blue); }
+  .badge-amber { background: var(--accent-amber-bg); color: var(--accent-amber); }
+  .badge-purple { background: var(--accent-purple-bg); color: var(--accent-purple); }
+  .badge-coral { background: var(--accent-coral-bg); color: var(--accent-coral); }
+
+  /* Card body */
+  .card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+  }
+
+  .body-col {
+    padding: 1.25rem 1.75rem 1.5rem;
+  }
+
+  .body-col:first-child {
+    border-right: 1px solid var(--cream-border);
+  }
+
+  .col-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 0.75rem;
+  }
+
+  .tip-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .tip-list li {
+    font-size: 13px;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    padding: 7px 0 7px 18px;
+    position: relative;
+    border-bottom: 1px solid var(--cream-border);
+  }
+
+  .tip-list li:last-child { border-bottom: none; }
+
+  .tip-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--cream-border);
+  }
+
+  .tip-list.starred li::before { background: #BA7517; }
+
+  .info-box {
+    margin-top: 10px;
+    background: var(--cream);
+    border-left: 2px solid var(--cream-border);
+    border-radius: 0 8px 8px 0;
+    padding: 10px 12px;
+    font-size: 12.5px;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+
+  .info-box strong { color: var(--ink); font-weight: 500; }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .stat-box {
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 10px 12px;
+    border: 1px solid var(--cream-border);
+  }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-light);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .stat-val {
+    font-size: 13px;
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  /* Verdict bar */
+  .verdict {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.9rem 1.75rem;
+    border-top: 1px solid var(--cream-border);
+    background: var(--cream);
+    border-radius: 0 0 16px 16px;
+  }
+
+  .verdict-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-light);
+    white-space: nowrap;
+  }
+
+  .verdict-text {
+    font-size: 12.5px;
+    color: var(--ink-mid);
+    line-height: 1.5;
+  }
+
+  /* ---- FOOTER ---- */
+  footer {
+    border-top: 1px solid var(--cream-border);
+    padding: 2rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .footer-brand {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .footer-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 640px) {
+    .card-top { grid-template-columns: auto 1fr; }
+    .platform-link { grid-column: 1 / -1; align-self: start; }
+    .card-body { grid-template-columns: 1fr; }
+    .body-col:first-child { border-right: none; border-bottom: 1px solid var(--cream-border); }
+    .hero-deco { display: none; }
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    .platforms { padding: 1.5rem 1rem 3rem; }
+    .hero { padding: 3rem 1rem 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">shiv4ngi.decodes</a>
+  <ul class="nav-links">
+    <li><a href="#platforms">Platforms</a></li>
+    <li><a href="https://www.instagram.com/shiv4ngi.decodes" target="_blank">Instagram</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-deco">5</div>
+  <div class="hero-eyebrow">Freelance Guide · April 2026</div>
+  <h1 class="hero-title">
+    Earn in USD —<br>
+    <em>beyond Upwork</em><br>
+    & Fiverr
+  </h1>
+  <p class="hero-sub">
+    Deep research on 5 platforms where skilled freelancers are actually getting hired — with tips, tricks, and direct links to apply.
+  </p>
+  <div class="hero-tags">
+    <span class="hero-tag">0% commission platforms</span>
+    <span class="hero-tag">vetted marketplaces</span>
+    <span class="hero-tag">dev · design · finance · PM</span>
+    <span class="hero-tag">USD payments</span>
+    <span class="hero-tag">no bidding wars</span>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="platforms" id="platforms">
+
+  <!-- JOBBERS -->
+  <div class="platform-card">
+    <div class="card-top">
+      <div class="platform-num">01</div>
+      <div class="card-title-group">
+        <div class="platform-name">Jobbers.io</div>
+        <div class="platform-tagline">Commission-free global marketplace · Direct client negotiation · 300K+ daily visits</div>
+      </div>
+      <a href="https://www.jobbers.io" target="_blank" class="platform-link link-green">Visit Jobbers ↗</a>
+    </div>
+    <div class="badge-strip">
+      <span class="badge badge-green">0% commission</span>
+      <span class="badge badge-blue">300K+ daily visits</span>
+      <span class="badge badge-amber">Direct payments</span>
+      <span class="badge badge-coral">All skill types</span>
+      <span class="badge badge-purple">150+ countries</span>
+    </div>
+    <div class="card-body">
+      <div class="body-col">
+        <div class="col-label">How it works</div>
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:10px;">Jobbers is a direct-connect marketplace — no middleman on your payments. You negotiate rates with clients personally. The platform earns through ads and optional premium features, not a cut of your earnings.</p>
+        <div class="info-box"><strong>The math:</strong> Earning ₹1L/month on Fiverr? You lose ₹20,000 to fees. On Jobbers — you keep every rupee. Use this when pitching clients.</div>
+      </div>
+      <div class="body-col">
+        <div class="col-label">Smart tips to stand out</div>
+        <ul class="tip-list starred">
+          <li>Complete your profile 100% — Jobbers surfaces complete profiles first. Use a specific bio: not "developer with 5 years experience" but what exactly you build and for whom.</li>
+          <li>Use both modes: post your services AND actively browse and propose. Most wait. Proposers win more.</li>
+          <li>Since there are no platform fees, you can charge your real rate without inflating 20% to cover Fiverr's cut — use this openly with clients.</li>
+          <li>Always confirm payment terms in writing. Arrange milestone payments (30/30/30/10) for any project over $500.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict">
+      <span class="verdict-label">Best for</span>
+      <span class="verdict-text">Freelancers at any level who want maximum earnings and are comfortable managing payment logistics directly with clients.</span>
+    </div>
+  </div>
+
+  <!-- CODEABLE -->
+  <div class="platform-card">
+    <div class="card-top">
+      <div class="platform-num">02</div>
+      <div class="card-title-group">
+        <div class="platform-name">Codeable</div>
+        <div class="platform-tagline">WordPress-only vetted expert network · Top 2% acceptance · $80–$120/hr guided range</div>
+      </div>
+      <a href="https://www.codeable.io" target="_blank" class="platform-link link-purple">Visit Codeable ↗</a>
+    </div>
+    <div class="badge-strip">
+      <span class="badge badge-purple">2% acceptance rate</span>
+      <span class="badge badge-green">$80–$120/hr</span>
+      <span class="badge badge-blue">WordPress only</span>
+      <span class="badge badge-amber">28-day bug warranty</span>
+      <span class="badge badge-coral">700+ vetted experts</span>
+    </div>
+    <div class="card-body">
+      <div class="body-col">
+        <div class="col-label">The 5-stage application process</div>
+        <div class="stat-grid">
+          <div class="stat-box"><div class="stat-label">Stage 1</div><div class="stat-val">Application + video quiz</div></div>
+          <div class="stat-box"><div class="stat-label">Stage 2</div><div class="stat-val">Coding quiz (timed)</div></div>
+          <div class="stat-box"><div class="stat-label">Stage 3</div><div class="stat-val">Test project (real task)</div></div>
+          <div class="stat-box"><div class="stat-label">Stage 4</div><div class="stat-val">Live webcam interview</div></div>
+        </div>
+        <div class="info-box" style="margin-top:10px;"><strong>Stage 5:</strong> A 90-day probationary trial on real projects. Only apply for work you can 100% deliver — Codeable removes low-performers fast.</div>
+      </div>
+      <div class="body-col">
+        <div class="col-label">How to get accepted</div>
+        <ul class="tip-list starred">
+          <li>Build a solid GitHub repo before applying — WordPress plugins on the WP plugin repository are a major credibility signal. Reviewers look for this specifically.</li>
+          <li>Specialize in a high-demand niche: headless WordPress (React/Next.js frontend), WooCommerce scaling, or WCAG accessibility. These command the highest rates in 2026.</li>
+          <li>The live interview tests customer service scenarios, not just code. Prepare how you handle scope creep, late deliveries, and difficult clients.</li>
+          <li>Once in: respond within the first hour to project posts. Projects flow 24/7. Fast responders win over slow ones, every time.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict">
+      <span class="verdict-label">Best for</span>
+      <span class="verdict-text">Experienced WordPress developers who want premium clients without bidding wars and are willing to pass a rigorous vetting process.</span>
+    </div>
+  </div>
+
+  <!-- TOPTAL -->
+  <div class="platform-card">
+    <div class="card-top">
+      <div class="platform-num">03</div>
+      <div class="card-title-group">
+        <div class="platform-name">Toptal</div>
+        <div class="platform-tagline">Elite global network · Top 3% of applicants · Fortune 500 clients · No rate competition</div>
+      </div>
+      <a href="https://www.toptal.com/talent/apply" target="_blank" class="platform-link link-blue">Apply to Toptal ↗</a>
+    </div>
+    <div class="badge-strip">
+      <span class="badge badge-blue">Top 3% accepted</span>
+      <span class="badge badge-green">No bidding wars</span>
+      <span class="badge badge-amber">Guaranteed payments</span>
+      <span class="badge badge-purple">Dev · Design · Finance · PM</span>
+      <span class="badge badge-coral">200K+ applicants/year</span>
+    </div>
+    <div class="card-body">
+      <div class="body-col">
+        <div class="col-label">The 4 screening stages</div>
+        <ul class="tip-list">
+          <li><strong style="font-weight:500;">Stage 1 —</strong> English + personality call (15 min). Tests communication fluency and confidence, not accent.</li>
+          <li><strong style="font-weight:500;">Stage 2 —</strong> Timed offline coding assessment. Practice LeetCode Medium-level problems — that's the actual difficulty.</li>
+          <li><strong style="font-weight:500;">Stage 3 —</strong> Live pair-programming with a senior Toptal engineer (1 hr). Narrate your thinking out loud even when stuck.</li>
+          <li><strong style="font-weight:500;">Stage 4 —</strong> Real test project (1–3 weeks). Document your API, write tests even if optional, and break requirements into tasks first.</li>
+        </ul>
+      </div>
+      <div class="body-col">
+        <div class="col-label">How to actually pass</div>
+        <ul class="tip-list starred">
+          <li>Apply with a referral — Toptal states referred candidates are <strong style="font-weight:500;">5x more likely to pass</strong>. Search LinkedIn for Toptal members in your domain and ask politely. Most will help.</li>
+          <li>For the test project: a working messy solution beats a perfect unfinished one. Prioritize completion, then polish.</li>
+          <li>Write for the Toptal Engineering Blog after joining — it builds your profile and gets you matched to better, higher-rate assignments.</li>
+          <li>Keep your availability updated constantly. Job matchers reach out based on availability — silent profiles get skipped.</li>
+        </ul>
+        <div class="info-box"><strong>The big unlock:</strong> Once in, there is zero rate competition. Clients don't compare your price to a cheaper alternative — they see if you're the right fit for their project.</div>
+      </div>
+    </div>
+    <div class="verdict">
+      <span class="verdict-label">Best for</span>
+      <span class="verdict-text">Highly experienced professionals (2+ years) in dev, design, finance, or PM who want Fortune 500 clients, guaranteed pay, and zero time wasted on proposals.</span>
+    </div>
+  </div>
+
+  <!-- HACKER NEWS -->
+  <div class="platform-card">
+    <div class="card-top">
+      <div class="platform-num">04</div>
+      <div class="card-title-group">
+        <div class="platform-name">Hacker News</div>
+        <div class="platform-tagline">"Who is Hiring?" &amp; "Freelancer? Seeking Freelancer?" · Monthly threads · Zero fees · Direct startup access</div>
+      </div>
+      <a href="https://news.ycombinator.com" target="_blank" class="platform-link link-amber">Visit HN ↗</a>
+    </div>
+    <div class="badge-strip">
+      <span class="badge badge-amber">Posts 1st weekday/month</span>
+      <span class="badge badge-green">Zero fees, ever</span>
+      <span class="badge badge-blue">Startup &amp; tech clients</span>
+      <span class="badge badge-coral">Dev-heavy community</span>
+      <span class="badge badge-purple">Direct founder access</span>
+    </div>
+    <div class="card-body">
+      <div class="body-col">
+        <div class="col-label">How the threads work</div>
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:12px;">Three separate threads post on the first weekday of every month. All completely free, no platform, no algorithm — just you and the client.</p>
+        <div class="stat-grid">
+          <div class="stat-box"><div class="stat-label">Thread 1</div><div class="stat-val">Who is Hiring? (companies post)</div></div>
+          <div class="stat-box"><div class="stat-label">Thread 2</div><div class="stat-val">Who wants to be hired? (you post)</div></div>
+          <div class="stat-box" style="grid-column:1/-1;"><div class="stat-label">Thread 3 (best for freelance)</div><div class="stat-val">Freelancer? Seeking freelancer? — both sides post here</div></div>
+        </div>
+        <div class="info-box" style="margin-top:10px;"><strong>Copy this format:</strong><br>SEEKING FREELANCE | React + Node Engineer<br>Location: Remote (IST) | Available: 20 hrs/week<br>Stack: React, Node.js, PostgreSQL, AWS<br>Recent work: [one real result]<br>Portfolio: [link] · Email: [email]</div>
+      </div>
+      <div class="body-col">
+        <div class="col-label">Tips to get noticed</div>
+        <ul class="tip-list starred">
+          <li>HN readers are technical and skeptical. Be precise and factual. No marketing language — state your stack and one real result instead.</li>
+          <li>Post in the "Freelancer? Seeking Freelancer?" thread specifically, not just "Who wants to be hired?". The Freelancer thread has higher client intent.</li>
+          <li>Use <strong style="font-weight:500;">hnhiring.com</strong> — it indexes all HN job posts with search, back to 2018. Find clients who post repeatedly and contact them proactively between threads.</li>
+          <li>Reply to "Who is Hiring?" posts too. Many CTOs posting there also need freelance help and respond to targeted, relevant comments.</li>
+          <li>Build HN karma through real contributions before posting. A thoughtful reply on a relevant thread gets seen by hundreds of readers — passive client discovery.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict">
+      <span class="verdict-label">Best for</span>
+      <span class="verdict-text">Developers, designers, and technical PMs who can write concisely and want direct access to startup founders and CTOs — no bidding, no fees, no algorithm.</span>
+    </div>
+  </div>
+
+  <!-- CONTRA -->
+  <div class="platform-card">
+    <div class="card-top">
+      <div class="platform-num">05</div>
+      <div class="card-title-group">
+        <div class="platform-name">Contra</div>
+        <div class="platform-tagline">Portfolio-first independent platform · 0% freelancer commission · 1.5M+ independents · Vetted clients</div>
+      </div>
+      <a href="https://contra.com" target="_blank" class="platform-link link-coral">Visit Contra ↗</a>
+    </div>
+    <div class="badge-strip">
+      <span class="badge badge-coral">0% freelancer commission</span>
+      <span class="badge badge-green">Vetted clients only</span>
+      <span class="badge badge-purple">Expert verification badges</span>
+      <span class="badge badge-blue">USDC + PayPal + bank</span>
+      <span class="badge badge-amber">Pro plan: $29/month</span>
+    </div>
+    <div class="card-body">
+      <div class="body-col">
+        <div class="col-label">How it actually works</div>
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:10px;">Contra is built around your portfolio — think LinkedIn meets Behance, with built-in contracts and commission-free payments. Clients pay a small transaction fee (not you). The free plan lets you create a profile, send invoices, and receive payments. Pro ($29/month) unlocks applying to jobs, search ranking priority, and advanced analytics.</p>
+        <div class="info-box"><strong>Reality check:</strong> Contra has fewer clients than Upwork. The play is to use it as your portfolio hub + payment tool, and drive clients from Instagram/LinkedIn to your Contra profile — not to rely purely on inbound.</div>
+        <div class="info-box" style="margin-top:8px;"><strong>Invoice trick:</strong> Clients don't need a Contra account to pay you. You can invoice anyone, anywhere, just with their email — making Contra work for clients you found completely outside the platform.</div>
+      </div>
+      <div class="body-col">
+        <div class="col-label">How to stand out fast</div>
+        <ul class="tip-list starred">
+          <li>Get verified as an Expert in a specific tool: <strong style="font-weight:500;">Framer, Webflow, Spline, Rive, or Relume.</strong> Expert badges are visible in search and directly tied to higher rates and faster client inbound. This is the highest-leverage action on Contra.</li>
+          <li>Use Contra's AI-powered "Portfolio Magic" to launch fast — then customize heavily with your real case studies, real results, and actual client quotes. Generic output looks generic.</li>
+          <li>Fill your profile to 100% — Contra's algorithm surfaces complete profiles in "Discover" where vetted clients browse. Incomplete = invisible.</li>
+          <li>Share your Contra profile link everywhere: Instagram bio, LinkedIn headline, email signature, Twitter. Drive your own traffic here.</li>
+          <li>Upgrade to Pro before you have active leads, not after — Pro unlocks applying to opportunities and raises your search ranking immediately.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict">
+      <span class="verdict-label">Best for</span>
+      <span class="verdict-text">Creatives, marketers, and developers who want a beautiful portfolio + zero-commission payments, and are willing to drive some of their own client traffic from social media.</span>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <div class="footer-brand">shiv4ngi.decodes</div>
+  <div class="footer-sub">research compiled april 2026 · verify platform terms directly before applying</div>
+</footer>
+
+</body>
+</html>
